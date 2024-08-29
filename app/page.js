@@ -15,7 +15,7 @@ export default function Home() {
 
   const fetcher = (...args) => fetch(...args).then(res => res.json())
   const { mutate } = useSWRConfig()
-  const { data, error, isLoading, isValidating } = useSWR(URL, fetcher, { refreshInterval: 2000000 })
+  const { data, error, isLoading, isValidating } = useSWR(URL, fetcher, { refreshInterval: 1500 })
 
   const [type, setType] = useState('qualifications')
   const [competition, setCompetition] = useState({

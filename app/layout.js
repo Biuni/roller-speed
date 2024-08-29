@@ -4,8 +4,8 @@ import "./globals.css";
 const montserrat = Montserrat({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Roller Graphic",
-  description: "Lorem Ipsum",
+  title: "Inline Freestyle - Speed Slalom",
+  description: "",
 };
 
 export default function RootLayout({ children }) {
