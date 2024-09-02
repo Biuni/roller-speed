@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Flag from "react-world-flags";
+import FlagMapper from "../utils/flag_mapper";
 
 export default function ShowQualifications({ show, type }) {
 
@@ -31,16 +32,16 @@ export default function ShowQualifications({ show, type }) {
             {/* BANDIERA + NOME */}
             <div className="h-[75px] bg-[url('/bg-name.jpg')] bg-cover flex items-center">
               <div className="ml-3 flex items-center">
-                <Flag code={show.nationality} className="h-12 inline-block" fallback={searchFlag(show.nationality)} />
+                <Flag code={FlagMapper(show.nationality)} className="h-12 inline-block" fallback={searchFlag(FlagMapper(show.nationality))} />
                 <span className="pl-2 uppercase text-4xl font-extralight">{show.name}</span>
               </div>
             </div>
 
             {/* HEADERS */}
             <div className="h-[75px] bg-[url('/bg-info.jpg')] bg-cover flex items-center">
-              <div className="grid grid-cols-7 font-extralight text-white text-3xl flex-1 items-center">
+              <div className="grid grid-cols-7 font-extralight text-white text-2xl flex-1 items-center">
                 <div className="col-span-3 ml-3">
-                  SPEED &bull; {type.category} &bull; {type.sex}
+                  SPEED SLALOM &bull; {type.category} &bull; {type.sex}
                 </div>
                 <div className="text-center">
                   RUN <span className="font-extrabold">1</span>

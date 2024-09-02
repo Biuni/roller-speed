@@ -45,7 +45,7 @@ export default function Qualifications({ data, set }) {
             }
         })
         if (sort) {
-            allRuns.sort((a,b) => b.SortRun2 - a.SortRun2)
+            allRuns.sort((a,b) => a.SortRun2 - b.SortRun2)
             setNameBold([])
         }
 

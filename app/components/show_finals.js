@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Flag from "react-world-flags";
+import FlagMapper from "../utils/flag_mapper";
 
 export default function ShowFinals({ show, type }) {
 
@@ -21,14 +22,14 @@ export default function ShowFinals({ show, type }) {
         <div className="grid grid-cols-8">
           <div>&nbsp;</div>
           <div className="col-span-7">
-            <div className="grid grid-cols-2 gap-1 text-center font-bold text-[10px] flex items-center">
+            <div className="grid grid-cols-2 gap-1 text-center font-bold text-[12px] flex items-center">
               <div className="py-0.5 bg-[url('/bg-name.jpg')] bg-cover">LINE 1</div>
               <div className="py-0.5 bg-[url('/bg-name.jpg')] bg-cover">LINE 2</div>
             </div>
           </div>
         </div>
 
-        <div className="grid grid-cols-8 -mt-0.5">
+        <div className="grid grid-cols-8">
           <div className="text-right">
             <Image
               src='/logo.jpg'
@@ -47,9 +48,9 @@ export default function ShowFinals({ show, type }) {
                 <div className="grid grid-cols-7 h-[60px] bg-[url('/bg-name.jpg')] bg-cover flex items-center">
                   <div className="ml-3 flex items-center col-span-6">
                     <Flag
-                      code={invertLine1(show, 'nationality', show.round)}
+                      code={FlagMapper(invertLine1(show, 'nationality', show.round))}
                       className="h-8 inline-block"
-                      fallback={searchFlag(invertLine1(show, 'nationality', show.round))}
+                      fallback={searchFlag(FlagMapper(invertLine1(show, 'nationality', show.round)))}
                     />
                     <span className="pl-2 uppercase text-xl font-extralight">
                       {invertLine1(show, 'name', show.round)}
@@ -65,9 +66,9 @@ export default function ShowFinals({ show, type }) {
                 <div className="grid grid-cols-7 h-[60px] bg-[url('/bg-name.jpg')] bg-cover flex items-center">
                   <div className="ml-3 flex items-center col-span-6">
                     <Flag
-                      code={invertLine2(show, 'nationality', show.round)}
+                      code={FlagMapper(invertLine2(show, 'nationality', show.round))}
                       className="h-8 inline-block"
-                      fallback={searchFlag(invertLine2(show, 'nationality', show.round))}
+                      fallback={searchFlag(FlagMapper(invertLine2(show, 'nationality', show.round)))}
                     />
                     <span className="pl-2 uppercase text-xl font-extralight">
                       {invertLine2(show, 'name', show.round)}
@@ -85,7 +86,7 @@ export default function ShowFinals({ show, type }) {
               <div className="h-[40px] mt-[1px] bg-[url('/bg-info.jpg')] bg-cover flex items-center">
                 <div className="grid grid-cols-6 font-extralight text-white text-2xl flex-1 items-center">
                   <div className="col-span-4 ml-3">
-                    SPEED &bull; {type.category} &bull; {type.sex}
+                    SPEED SLALOM &bull; {type.category} &bull; {type.sex}
                   </div>
                   <div className="col-span-2 text-right">
                     WIN&nbsp;
@@ -101,7 +102,7 @@ export default function ShowFinals({ show, type }) {
               <div className="h-[40px] mt-[1px] bg-[url('/bg-info.jpg')] bg-cover flex items-center">
                 <div className="grid grid-cols-6 font-extralight text-white text-2xl flex-1 items-center">
                   <div className="col-span-4 ml-3">
-                    SPEED &bull; {type.category} &bull; {type.sex}
+                    SPEED SLALOM &bull; {type.category} &bull; {type.sex}
                   </div>
                   <div className="col-span-2 text-right">
                     WIN&nbsp;
